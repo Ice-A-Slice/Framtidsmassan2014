@@ -1,0 +1,10 @@
+<h1>Nyhetsarkivet</h1>
+<br>
+<% @newsfeeds.each do |newsfeed| %>
+  <p><%= newsfeed.created_at.to_s.to(15) %></p>
+  <p><%= newsfeed.title %></p>
+  <p><%= newsfeed.content %></p>
+  <p><%= link_to 'läs mer', newsfeed %></p>
+  <br>
+<% end %>
+<p><%= link_to 'tillbaka', exhibition_path %></p>

@@ -1,0 +1,291 @@
+// Place all the styles related to the for_exhibitors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#UpAgainDiv2{
+  background-image:url("backtotop_knapp.png");
+  background-size:100%, 100%;
+  background-repeat: no-repeat;
+
+  width:60px;
+  height:60px;
+
+}
+
+.interest-info-header{
+  color:#F16676;
+}
+
+.exhibitor-info-header, .contact-header{
+  color:#31bba2;
+}
+
+.contact-header{
+  padding-top:20px;
+}
+
+.contact-address-row{
+  margin-top:20px;
+  margin-bottom:40px;
+}
+
+.exhibitor-info{
+  margin-bottom:20px;
+}
+
+.interest-info-header{
+  margin-top:20px;
+}
+
+.interest-info-content{
+  margin-bottom:20px;
+}
+
+
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .delimiter{
+    width:100%;
+    height:auto;
+  }
+
+  .interest-info-header{
+    font-size: 16px;
+  }
+  .interest-info-content{
+    margin-bottom:20px;
+  }
+
+  #signboard-contact{
+    margin-top:40px;
+  }
+
+  .contact-telephone{
+
+  }
+  .contact-mail{
+    font-size: 10px;
+
+  }
+  .contact-header{
+    font-size: 16px;
+
+  }
+
+  .contact-address-row{
+    margin-top:20px;
+  }
+
+  .exhibitor-info-header{
+    font-size:24px;
+  }
+
+  #text-address{
+    font-size:12px;
+  }
+
+  .text-address{
+    font-size:12px;
+    margin-top:-10px;
+  }
+
+  //FOR EXHIBITORS STUFF
+  #container-end-for-exhibitors{
+    margin-top:20px;
+    background-color:#F16676;
+    padding-bottom:60px;
+    height:50px;
+  }
+}
+
+@media (min-width: 980px) and (max-width: 1199px){
+  .delimiter{
+    width:100%;
+    height:auto;
+  }
+
+  .exhibitor-info-header{
+    font-size:22px;
+  }
+
+  .interest-info-header{
+    font-size: 16px;
+  }
+  .interest-info-content{
+    margin-bottom:20px;
+  }
+
+  #signboard-contact{
+    margin-top:40px;
+  }
+
+  .contact-telephone{
+
+  }
+  .contact-mail{
+    font-size: 10px;
+
+  }
+  .contact-header{
+    font-size: 16px;
+
+  }
+
+
+
+  #text-address{
+    font-size:12px;
+  }
+
+  .text-address{
+    font-size:12px;
+    margin-top:-10px;
+  }
+
+  //FOR EXHIBITORS STUFF
+  #container-end-for-exhibitors{
+    margin-top:20px;
+    background-color:#F16676;
+    padding-bottom:60px;
+    height:50px;
+  }
+
+}
+
+
+
+
+/*Portrait tablet to landscape and desktop*/
+@media (min-width: 768px) and (max-width: 979px) {
+
+  .delimiter{
+    width:100%;
+    height:auto;
+  }
+
+  .exhibitor-info-header{
+    font-size:19px;
+  }
+
+  .interest-info-header{
+    font-size: 16px;
+  }
+  .interest-info-content{
+    margin-bottom:20px;
+  }
+
+  #signboard-contact{
+    margin-top:40px;
+  }
+
+  .contact-telephone{
+  }
+  .contact-mail{
+    font-size: 10px;
+  }
+  .contact-header{
+    font-size: 16px;
+  }
+
+  .contact-address-row{
+    margin-top:20px;
+  }
+
+  #text-address{
+    font-size:12px;
+  }
+
+  .text-address{
+    font-size:12px;
+    margin-top:-10px;
+  }
+
+  //FOR EXHIBITORS STUFF
+  #container-end-for-exhibitors{
+    margin-top:20px;
+    background-color:#F16676;
+    padding-bottom:60px;
+    height:50px;
+  }
+
+}
+
+
+@media (min-width: 625px) and (max-width: 767px) {
+
+  .exhibitor-info-header{
+    margin-top:20px;
+    font-size:22px;
+  }
+
+  .contact-address-row{
+    margin-top:1px;
+  }
+
+  .contact-telephone{
+  }
+  .contact-mail{
+    font-size: 10px;
+  }
+
+  #container-end-xs-for-exhibitors{
+    margin-bottom:-20px;
+    padding-bottom:45px;
+    background-color:#F16676;
+    height:60px;
+  }
+
+}
+@media (min-width: 481px) and (max-width: 624px) {
+  .exhibitor-info-header{
+    font-size:20px;
+  }
+  #container-end-xs-for-exhibitors{
+    margin-bottom:-20px;
+    padding-bottom:45px;
+    background-color:#F16676;
+    height:60px;
+  }
+
+  .contact-address-row{
+    margin-top:10px;
+  }
+
+  .contact-telephone{
+  }
+  .contact-mail{
+    font-size: 10px;
+  }
+
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+  .exhibitor-info-header{
+    font-size:20px;
+  }
+
+  .contact-address-row{
+    margin-top:10px;
+  }
+
+  #container-end-xs-for-exhibitors{
+    margin-bottom:-20px;
+    padding-bottom:45px;
+    background-color:#F16676;
+    height:45px;
+  }
+
+
+  .contact-telephone{
+  }
+  .contact-mail{
+    font-size: 10px;
+  }
+
+}
+

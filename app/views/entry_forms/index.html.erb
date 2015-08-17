@@ -1,0 +1,43 @@
+<h1>Listing entry_forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Contact</th>
+      <th>Organization</th>
+      <th>Telephone</th>
+      <th>Email</th>
+      <th>Food amount</th>
+      <th>Food other</th>
+      <th>Electricity</th>
+      <th>Internet</th>
+      <th>Seminar</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entry_forms.each do |entry_form| %>
+      <tr>
+        <td><%= entry_form.contact %></td>
+        <td><%= entry_form.organization %></td>
+        <td><%= entry_form.telephone %></td>
+        <td><%= entry_form.email %></td>
+        <td><%= entry_form.food_amount %></td>
+        <td><%= entry_form.food_other %></td>
+        <td><%= entry_form.electricity %></td>
+        <td><%= entry_form.internet %></td>
+        <td><%= entry_form.seminar %></td>
+        <td><%= link_to 'Show', entry_form %></td>
+        <td><%= link_to 'Edit', edit_entry_form_path(entry_form) %></td>
+        <td><%= link_to 'Destroy', entry_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry form', new_entry_form_path %>

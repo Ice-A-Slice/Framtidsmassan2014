@@ -1,0 +1,213 @@
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "exhibitors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131228190458')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "exhibitors"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:31:15', '2014-01-02 16:31:15', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:31:15', '2014-01-02 16:31:15', 298486374)[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExhibitorsControllerTest: test_should_create_exhibitor
+------------------------------------------------------
+  [1m[35mExhibitor Load (0.2ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exhibitors"[0m
+Processing by ExhibitorsController#create as HTML
+  Parameters: {"exhibitor"=>{"description"=>nil, "image_url"=>"MyString", "title"=>"MyString"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mExhibitor Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "exhibitors" WHERE "exhibitors"."title" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered exhibitors/_form.html.erb (7.4ms)
+  Rendered exhibitors/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 608ms (Views: 581.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exhibitors"[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------
+ExhibitorsControllerTest: test_should_destroy_exhibitor
+-------------------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exhibitors"[0m
+Processing by ExhibitorsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "exhibitors" WHERE "exhibitors"."id" = ?  [["id", 980190962]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/exhibitors
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "exhibitors"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------
+ExhibitorsControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExhibitorsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", "980190962"]]
+  Rendered exhibitors/_form.html.erb (3.0ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+ExhibitorsControllerTest: test_should_get_index
+-----------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExhibitorsController#index as HTML
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors"
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+---------------------------------------------
+ExhibitorsControllerTest: test_should_get_new
+---------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExhibitorsController#new as HTML
+  Rendered exhibitors/_form.html.erb (2.7ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------
+ExhibitorsControllerTest: test_should_show_exhibitor
+----------------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExhibitorsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExhibitorsControllerTest: test_should_update_exhibitor
+------------------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExhibitorsController#update as HTML
+  Parameters: {"exhibitor"=>{"description"=>nil, "image_url"=>"MyString", "title"=>"MyString"}, "id"=>"980190962"}
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mExhibitor Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "exhibitors" WHERE ("exhibitors"."title" = 'MyString' AND "exhibitors"."id" != 980190962) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  Rendered exhibitors/_form.html.erb (3.3ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "exhibitors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131228190458')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "exhibitors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:33:23', '2014-01-02 16:33:23', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:33:23', '2014-01-02 16:33:23', 298486374)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------
+ExhibitorsControllerTest: test_should_create_exhibitor
+------------------------------------------------------
+  [1m[35mExhibitor Load (0.2ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exhibitors"[0m
+Processing by ExhibitorsController#create as HTML
+  Parameters: {"exhibitor"=>{"title"=>"Lorem Ipsum", "description"=>"Barca is best", "image_url"=>"kaffemaskin.jpeg"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mExhibitor Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "exhibitors" WHERE "exhibitors"."title" = 'Lorem Ipsum' LIMIT 1[0m
+  [1m[35mSQL (18.1ms)[0m  INSERT INTO "exhibitors" ("created_at", "description", "image_url", "title", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", Thu, 02 Jan 2014 16:33:23 UTC +00:00], ["description", "Barca is best"], ["image_url", "kaffemaskin.jpeg"], ["title", "Lorem Ipsum"], ["updated_at", Thu, 02 Jan 2014 16:33:23 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/exhibitors/980190963
+Completed 302 Found in 28ms (ActiveRecord: 18.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "exhibitors"
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------
+ExhibitorsControllerTest: test_should_destroy_exhibitor
+-------------------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "exhibitors"
+Processing by ExhibitorsController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "exhibitors" WHERE "exhibitors"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/exhibitors
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exhibitors"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------
+ExhibitorsControllerTest: test_should_get_edit
+----------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExhibitorsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered exhibitors/_form.html.erb (30.6ms)
+Completed 200 OK in 45ms (Views: 44.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------
+ExhibitorsControllerTest: test_should_get_index
+-----------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExhibitorsController#index as HTML
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors"[0m
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+---------------------------------------------
+ExhibitorsControllerTest: test_should_get_new
+---------------------------------------------
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by ExhibitorsController#new as HTML
+  Rendered exhibitors/_form.html.erb (2.1ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------------
+ExhibitorsControllerTest: test_should_show_exhibitor
+----------------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExhibitorsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mExhibitor Load (0.0ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------------------
+ExhibitorsControllerTest: test_should_update_exhibitor
+------------------------------------------------------
+  [1m[36mExhibitor Load (0.1ms)[0m  [1mSELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by ExhibitorsController#update as HTML
+  Parameters: {"exhibitor"=>{"title"=>"Lorem Ipsum", "description"=>"Barca is best", "image_url"=>"kaffemaskin.jpeg"}, "id"=>"980190962"}
+  [1m[35mExhibitor Load (0.1ms)[0m  SELECT "exhibitors".* FROM "exhibitors" WHERE "exhibitors"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mExhibitor Exists (0.1ms)[0m  SELECT 1 AS one FROM "exhibitors" WHERE ("exhibitors"."title" = 'Lorem Ipsum' AND "exhibitors"."id" != 980190962) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "exhibitors" SET "title" = ?, "description" = ?, "image_url" = ?, "updated_at" = ? WHERE "exhibitors"."id" = 980190962[0m  [["title", "Lorem Ipsum"], ["description", "Barca is best"], ["image_url", "kaffemaskin.jpeg"], ["updated_at", Thu, 02 Jan 2014 16:33:23 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/exhibitors/980190962
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "exhibitors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131228190458')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "exhibitors"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:42:10', '2014-01-02 16:42:10', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "exhibitors" ("title", "description", "image_url", "created_at", "updated_at", "id") VALUES ('MyString', NULL, 'MyString', '2014-01-02 16:42:10', '2014-01-02 16:42:10', 298486374)[0m
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+----------------------------------------------------------
+ExhibitorTest: test_exhibitor_attributes_must_not_be_empty
+----------------------------------------------------------
+  [1m[35mExhibitor Exists (0.1ms)[0m  SELECT 1 AS one FROM "exhibitors" WHERE "exhibitors"."title" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m

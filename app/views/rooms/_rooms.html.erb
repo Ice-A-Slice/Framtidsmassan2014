@@ -1,0 +1,16 @@
+<% @schedules.each do |s| %>
+    <% if s.rooms_id == @room.id%>
+        <div class=" row">
+          <div class="col-xs-3"></div>
+          <div class="col-xs-3"><%= s.time%></div>
+
+          <% @exhibitors.each do |ex| %>
+              <% if s.exhibitors_id == ex.id%>
+                  <div class="col-xs-3"><%= ex.title %></div>
+              <% end %>
+          <% end %>
+          <div class="col-xs-3"></div>
+
+        </div>
+    <% end %>
+<% end %>

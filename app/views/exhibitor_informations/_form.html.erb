@@ -1,0 +1,25 @@
+<%= form_for(@exhibitor_information) do |f| %>
+  <% if @exhibitor_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exhibitor_information.errors.count, "error") %> förhindrade texten från att bli sparad</h2>
+
+      <ul>
+      <% @exhibitor_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :header %><br>
+    <%= f.text_field :header %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.cktext_area :content, :class => 'someclass', :ckeditor => {:language => 'en'} %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Spara' %>
+  </div>
+<% end %>

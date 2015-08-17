@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @info_text.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @info_text.content %>
+</p>
+
+<%= link_to 'Redigera informationstext', edit_info_text_path(@info_text) %> |
+<%= link_to 'Tillbaka', admin_path %>

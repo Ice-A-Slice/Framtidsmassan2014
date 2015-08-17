@@ -1,0 +1,174 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="hidden-xs row">
+  <div class="col-sm-6 col-sm-offset-3"  id="banner">
+    <%= link_to exhibition_path, :class=>'button' do %>
+        <%= image_tag('logo.png', :class=> 'logo')%>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 infoBox">
+    <p class="InfoHeader"><%= @info.title %></p>
+    <p class="InfoContentText"><%= sanitize(@info.content) %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <%= link_to  edit_info_text_path(@info.id) do %>
+        <button>Redigera text</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4 col-sm-2 col-xs-offset-1 col-sm-offset-3"><p class="NewsHeader">Nyheter</p></div>
+</div>
+<% @newsfeed.each do |nf| %>
+    <div class="row NewsBox">
+      <div class="col-xs-5 col-xs-offset-1 col-sm-3 col-sm-offset-3"><p class="NewsTitle"><%= nf.title %></p></div>
+      <div class="col-xs-5 col-sm-3 "><p class="NewsTimestamp"><%= nf.created_at.to_s.to(15) %></p></div>
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3"><p class="NewsContent"><%= nf.content.truncate(100) %></p></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-offset-3 col-xs-2">
+        <%= link_to newsfeed_path(nf.id) do %>
+            <button>Läs</button>
+        <% end %>
+      </div>
+      <div class="col-xs-2">
+    <%= link_to edit_newsfeed_path(nf.id) do %>
+        <button>Redigera</button>
+    <% end %>
+      </div>
+      <div class="col-xs-2">
+        <%= link_to newsfeed_path(nf.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <button>Ta bort</button>
+      <% end %>
+      </div>
+    </div>
+<% end %>
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+<%= link_to new_newsfeed_path do %>
+    <button>Skriv nyhet</button>
+<% end %>
+  </div>
+</div>
+<!--this div contains the Exhibitor Header/signboard and loops out the categorybuttons-->
+<div class="row" id="container-exhibitors">
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_utstallare.png', :class=>"delimiter") %>
+  </div>
+  <% @categories.each do |cat| %>
+      <%= link_to category_path(cat.id), remote: true, method: :get, :class => 'button' do %>
+          <div class="hidden-xs col-sm-2 cat">
+            <p class="cat_title"><%= cat.title %></p>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+
+<!--This div outputs the exhibitors when a category has been selected-->
+<div id="exhibitor-row" class="row">
+  <div class="col-sm-8 col-xs-11 col-xs-offset-1 col-sm-offset-3">
+    <div class="row">
+      <div id="exhibitor_show" class="col-xs-12"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-3">
+     <%= link_to categories_path do %>
+    <button>Hantera kategorier</button>
+    <% end %>
+  </div>
+  <div class="col-xs-3">
+     <%= link_to exhibitors_path do %>
+    <button>Hantera Utställare</button>
+    <% end %>
+  </div>
+</div>
+
+<!--this div contains the Schedule Header/signboard and loops out the roombuttons-->
+<div id="container-schedules" class="row">
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_schema.png', :class=>"delimiter") %>
+  </div>
+
+  <!--This loops out the roombuttons for the leisure schedules-->
+  <% @rooms.each do |room| %>
+      <%= link_to room_path(room.id), remote: true, method: :get, :class => 'button' do %>
+          <div class="hidden-xs col-sm-2 room">
+            <p class="cat_title"><%= room.title %></p>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+
+<!--This div outputs the schedule when a room has been selected-->
+<div class="row">
+  <div class="col-xs-11 col-xs-offset-1 col-sm-8 col-sm-offset-3">
+    <div class="row">
+      <div id="schedule_show" class="col-xs-12"></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-3">
+    <%= link_to rooms_path do %>
+    <button>Hantera lokaler</button>
+    <% end %>
+
+  </div>
+  <div class="col-xs-3">
+    <%= link_to schedules_path do %>
+        <button>hantera schema</button>
+    <% end %>
+  </div>
+</div>
+
+<div id="container-map" class="row">
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_karta.png', :class=>"delimiter") %>
+  </div>
+  <div id="mobilMap" class="col-xs-4 hidden-sm hidden-md hidden-lg">
+    <p class="delimiter_title">Karta</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12col-sm-8 col-sm-offset-3">
+    <%= image_tag(@map.image, :class=>"map") %>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-6">
+    <%= link_to edit_map_path(@map) do %>
+        <button>Redigera karta</button>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+<!--Bottom navbar-->
+<div id="container-end" class="row hidden-xs">
+  <%= link_to logout_path, method: :delete  do %>
+      <div class="col-xs-2  Login_text">
+        <p class="Login_text">Logga ut</p>
+      </div>
+  <% end %>
+</div>

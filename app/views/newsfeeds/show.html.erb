@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rubrik:</strong>
+  <%= @newsfeed.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @newsfeed.content %>
+</p>
+
+<%= link_to 'Tillbaka', exhibition_path %>
+<%= link_to 'Gå till arkivet', newsfeeds_path %>

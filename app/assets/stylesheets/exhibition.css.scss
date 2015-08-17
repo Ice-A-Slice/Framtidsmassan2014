@@ -1,0 +1,121 @@
+// Place all the styles related to the Exhibition controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.exhibition {
+  #container-start{
+
+  }
+
+  .exhibitorRow {
+
+    margin-bottom:10px
+  }
+
+  #img-social-media{
+    width:100px;
+    height:auto;
+    margin-top: 1em;
+    img {
+      width: 80px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      position: absolute;
+    }
+  }
+
+  /* An entry in the store catalog */
+  .entry {
+    width:100%;
+    height:100%;
+    //overflow: auto;
+    margin-top: 1em;
+
+
+
+    img {
+      width: 100%;
+      height: 100px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      position: relative;
+    }
+
+
+    h3 {
+      font-size: 120%;
+      font-family: sans-serif;
+
+      margin-top: 0;
+      margin-bottom: 2px;
+      color: #227;
+    }
+
+
+  }
+
+
+
+
+
+.clickedButton{
+  background-image: url("utstallare_kategori_onclick_button.png");
+  background-size:100%, 100%;
+  background-repeat: no-repeat;
+}
+
+.clickedButtonRoom{
+  background-image: url("schema_plats_onclick_button.png");
+  background-size:100%, 100%;
+  background-repeat: no-repeat;
+}
+
+
+#start_empty_box {
+
+}
+
+
+.delimiter{
+  width:100%;
+  height:auto;
+}
+
+
+}
+
+
+.arrow{
+  height:10%;
+  width:20%;
+  margin:0 auto ;
+}
+
+.ExhibitorButton1{
+  border: 2p solid blue;
+}
+.ExhibitorButton2{}
+
+
+
+#UpAgainDiv{
+  background-image:url("back_to_top_button.png");
+  background-size:100%, 100%;
+  background-repeat: no-repeat;
+
+  width:60px;
+  height:60px;
+
+}
+
+
+
+.Login_text{
+  margin-top:16px;
+  text-align:center;
+  font-size: 20px;
+  color:#fff;
+}
+
+

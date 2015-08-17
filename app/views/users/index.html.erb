@@ -1,0 +1,30 @@
+<h1>Administratörer</h1>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Namn</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'Visa', user %></td>
+        <td><%= link_to 'Redigera', edit_user_path(user) %></td>
+        <td><%= link_to 'Ta bort', user, method: :delete, data: { confirm: 'Vill du ta bort admin?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Skapa ny administratör', new_user_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@exhibitor) do |f| %>
+    <% if @exhibitor.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@exhibitor.errors.count, "error") %> prohibited this exhibitor from being saved:</h2>
+
+          <ul>
+            <% @exhibitor.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :category_id, t('.category_type') %><br>
+      <%= f.collection_select(:category_id, Category.all, :id, :title) %>
+    </div>
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :position %><br>
+      <%= f.text_field :position %>
+    </div>
+    <div class="field">
+      <%= f.label :link %><br>
+      <%= f.text_field :link %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

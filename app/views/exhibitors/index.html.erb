@@ -1,0 +1,41 @@
+<h1>Utställare</h1>
+
+<br>
+
+<%= link_to 'Ny utställare', new_exhibitor_path %>
+
+<br>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Namn</th>
+      <th>Kategori</th>
+      <th>Position</th>
+      <th>Länk</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exhibitors.each do |exhibitor| %>
+
+      <tr>
+        <td><%= exhibitor.title %></td>
+        <% @category.each do |category| %>
+        <% if exhibitor.category_id == category.id %>
+            <td><%= category.title %></td>
+        <% end %>
+        <% end %>
+        <td><%= exhibitor.position %></td>
+        <td><%= exhibitor.link %></td>
+        <td><%= link_to 'Redigera', edit_exhibitor_path(exhibitor) %></td>
+        <td><%= link_to 'Ta bort', exhibitor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+

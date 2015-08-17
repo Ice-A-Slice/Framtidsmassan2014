@@ -1,0 +1,568 @@
+.visitText2:hover{
+  text-decoration: none;
+  cursor: default;
+  background-color: transparent;
+}
+
+.admin-menu-link{
+  margin-top:14px;
+  margin-right:20px;
+}
+
+p{
+  font-family: arial, sans-serif
+}
+
+#catbox{
+  border-top: 1px solid #F16676;
+  margin-bottom:4px;
+}
+#ScheduleTextMargin{
+  margin-top:8px;
+}
+
+#container-main{
+  margin-top: 5em;
+  width:66%;
+  height:auto;
+}
+
+.navbar-fixed-top{
+  background-color: white;
+}
+
+#banner{
+  padding: 25px;
+}
+#notice{
+  color: #000 !important;
+  border: 2px solid green;
+
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+
+#for_exhibitors_menu{
+  background-image: url('meny.png');
+  pointer-events:none;
+  height:100px;
+  background-size:100%,100%;
+  background-repeat: no-repeat;
+
+  margin:0 auto;
+}
+
+#container-start{
+  overflow:visible;
+
+  width:100%;
+
+
+
+  #main{
+
+    margin-left: 17em;
+    padding: 1em;
+    background: #ffffff;
+  }
+
+  .adminMenuText{
+    text-align: center;
+  }
+
+  #side{
+    background-image: url('Menyn.png');
+    pointer-events:none;
+    height:100px;
+    background-size:100%,100%;
+    background-repeat: no-repeat;
+
+    margin:0 auto;
+  }
+}
+
+
+
+.dropdownmenu{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.button:hover, .dropdown-toggle:hover, .visitText:hover{
+  text-decoration: none;
+  cursor: default;
+  background-color: transparent;
+}
+.menu_holder{
+  border-right: 1px solid white;
+}
+.InfoHeader{
+  color:#F16676;
+}
+
+.NewsHeader{
+  color:#3686C1;
+}
+.NewsTimestamp{
+  text-align: right;
+}
+
+.NewsTitle{
+  color:#70C167;
+}
+.newsLink{
+  color:#3686C1;
+  font-size: 10px;
+
+}
+.logo{
+  width:100%;
+  height:auto;
+}
+
+.adminMenuText{
+  color:blue;
+}
+
+  #mobilExhibitor{
+    background-image: url("delimiter_utstallare.png");
+    background-repeat: no-repeat;
+} #mobilSchema{
+    background-image: url("delimiter_schema.png");
+    background-repeat: no-repeat;
+} #mobilMap{
+    background-image: url("delimiter_karta.png");
+    background-repeat: no-repeat;
+} #mobilInterest{
+    background-image: url("delimiter_utstallare.png");
+    background-repeat: no-repeat;
+} #mobilContact{
+    background-image: url("delimiter_karta.png");
+    background-repeat: no-repeat;
+}
+
+
+  .cat{
+    padding-bottom:20px;
+    background-image: url("utstallare_kategori_button.png");
+
+
+    background-size:100%, 100%;
+    background-repeat: no-repeat;
+} .room{
+    padding-bottom:20px;
+    background-image: url("schema_plats_button.png");
+    background-size:100%, 100%;
+    background-repeat: no-repeat;
+}
+
+.delimiter_title{
+  text-align:left;
+  font-weight: bold;
+  color:white;
+} .cat_title{
+    text-align: right;
+    color: white;
+  }
+
+.exhibitorButton{
+  width:90%;
+  height:auto;
+}
+
+
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  #container-main{
+    margin-top: 5em;
+    width:66%;
+    height:auto;
+  }
+  .InfoHeader{
+    line-height:28px;
+    font-size:24px;
+    color:#F16676;
+  }
+
+  .menu_links{
+    font-size:11px;
+    margin-top:14px;
+    text-align: center;
+    pointer-events:auto;
+    color: white;
+  }
+
+  .NewsHeader{
+    margin-top:30px;
+    color:#3686C1;
+    font-size: 16px;
+  }
+  .NewsBox{
+    margin-top:20px;
+  }
+
+  .NewsTimestamp{
+    font-size: 10px;
+  }
+
+  .NewsTitle{
+    color:#70C167;
+    font-size: 14px;
+  }
+
+
+  .InfoContentText{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  #container-exhibitors{
+    margin-top:40px;
+  }
+
+  .cat{
+    padding-bottom:20px;
+    background-image: url("utstallare_kategori_button.png");
+    background-size:100%, 100%;
+    background-repeat: no-repeat;
+  }
+
+  .room{
+    padding-bottom:20px;
+    background-image: url("schema_plats_button.png");
+    background-size:100%, 100%;
+    background-repeat: no-repeat;
+  }
+
+  .cat_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .room_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .ExhibitorTitle{
+    font-size:15px;
+  }
+
+  .ExhibitorPosition{
+    font-size: 15px;
+  }
+
+  #container-schedules{
+    margin-top:40px;
+  }
+
+  .ScheduleTime{
+    font-size: 15px;
+  }
+
+  #container-map{
+    margin-top: 40px;
+  }
+
+  #container-end{
+    background-color:#31bba2;
+    padding-bottom:60px;
+    height:50px;
+  }
+
+  .Login_text{
+    margin-top:13px;
+    text-align:center;
+    font-size: 11px;
+    color:#fff;
+  }
+
+  .social_button{
+    margin-top:20px;
+
+  }
+  .socialButtonImage{
+
+    width:auto;
+    height:30px;
+  }
+
+  .map{
+    width:100%;
+    height:auto;
+    margin-bottom:40px;
+  }
+
+  .visitText{
+    margin-left: - 30px;
+
+  }
+
+  .visitText2
+  {
+    margin-left: - 30px;
+  }
+
+}
+
+@media (min-width: 980px) and (max-width: 1199px){
+  #container-main{
+    //background-color:blue;
+    margin-top: 5em;
+
+    width:66%;
+    height:auto;
+  }
+  .InfoHeader{
+    line-height:28px;
+    font-size:24px;
+    color:#F16676;
+  }
+
+  .menu_links{
+    font-size:11px;
+    margin-top:10px;
+    text-align: center;
+    pointer-events:auto;
+    color: white;
+  }
+
+
+  .InfoContentText{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .NewsHeader{
+    margin-top:30px;
+    color:#3686C1;
+    font-size: 16px;
+  }
+  .NewsBox{
+    margin-top:20px;
+  }
+
+  .NewsTimestamp{
+    font-size: 10px;
+  }
+
+  .NewsTitle{
+    color:#70C167;
+    font-size: 14px;
+  }
+
+  #container-exhibitors{
+    margin-top:40px;
+  }
+
+  .cat_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .room_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .ExhibitorTitle{
+    font-size:15px;
+  }
+
+  .ExhibitorPosition{
+    font-size: 15px;
+  }
+
+  #container-schedules{
+    margin-top:40px;
+  }
+
+  .ScheduleTime{
+    font-size: 15px;
+  }
+
+  #container-map{
+    margin-top: 40px;
+  }
+
+  #container-end{
+    background-color:#31bba2;
+    padding-bottom:60px;
+    height:50px;
+  }
+
+  .Login_text{
+    margin-top:13px;
+    text-align:center;
+    font-size: 11px;
+    color:#fff;
+  }
+
+  .social_button{
+    margin-top:20px;
+
+  }
+  .socialButtonImage{
+
+    width:auto;
+    height:30px;
+  }
+
+  .map{
+    width:100%;
+    height:auto;
+    margin-bottom:40px;
+  }
+  .visitText{
+    margin-left: - 30px;
+
+  }
+  .visitText2{
+    margin-left: - 30px;
+
+  }
+
+}
+
+
+
+
+/*Portrait tablet to landscape and desktop*/
+@media (min-width: 768px) and (max-width: 979px) {
+  #container-main{
+
+    margin-top: 5em;
+
+    width:66%;
+    height:auto;
+  }
+  .InfoHeader{
+    line-height:26px;
+    font-size:22px;
+    color:#F16676;
+  }
+
+  .menu_links{
+    font-size:10px;
+    margin-top:7px;
+    text-align: center;
+    pointer-events:auto;
+    color: white;
+  }
+
+  .InfoContentText{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .NewsHeader{
+    margin-top:30px;
+    color:#3686C1;
+    font-size: 16px;
+  }
+  .NewsBox{
+    margin-top:20px;
+  }
+
+  .NewsTimestamp{
+    font-size: 10px;
+  }
+
+  .NewsTitle{
+    color:#70C167;
+    font-size: 14px;
+  }
+
+  #container-exhibitors{
+    margin-top:40px;
+  }
+  .cat{
+    padding-bottom:15px;
+    background-image: url("utstallare_kategori_button.png");
+    background-size:100%, 100%;
+    background-repeat: no-repeat;
+  } .room{
+      padding-bottom:15px;
+      background-image: url("schema_plats_button.png");
+      background-size:100%, 100%;
+      background-repeat: no-repeat;
+    }
+  .cat_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .room_title{
+    padding-top:15px;
+    text-align:right;
+    font-size: 11px;
+    color:white;
+  }
+
+  .ExhibitorTitle{
+    font-size:15px;
+  }
+
+  .ExhibitorPosition{
+    font-size: 15px;
+  }
+
+  #container-schedules{
+    margin-top:40px;
+  }
+
+  .ScheduleTime{
+    font-size: 15px;
+  }
+
+  #container-map{
+    margin-top: 40px;
+  }
+
+  #container-end{
+    background-color:#31bba2;
+    padding-bottom:60px;
+    height:50px;
+  }
+
+  .Login_text{
+    margin-top:13px;
+    text-align:center;
+    font-size: 11px;
+    color:#fff;
+  }
+
+  .social_button{
+    margin-top:20px;
+
+  }
+  .socialButtonImage{
+
+    width:auto;
+    height:30px;
+  }
+
+  .map{
+    width:100%;
+    height:auto;
+    margin-bottom:40px;
+  }
+
+
+
+}
+

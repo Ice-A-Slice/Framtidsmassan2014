@@ -1,0 +1,29 @@
+<h1>Kategorier</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+        <td><%= link_to 'Visa', category %></td>
+        <td><%= link_to 'Redigera', edit_category_path(category) %></td>
+        <td><%= link_to 'Ta bort', category, method: :delete, data: { confirm: 'Vill du ta bort denna kategori?' } %></td>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Skapa kategori', new_category_path %>

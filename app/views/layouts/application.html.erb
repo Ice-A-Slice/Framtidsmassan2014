@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Framtidsmässan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plugg, jobb eller resa - mässan som hjälper dig hitta vägen
+                                    Torsdagen den 6 mars 2014 anordnar Karlshamns kommun tillsammans med
+                                    Arbetsförmedlingen Framtidsmässa på Östra Piren i Karlshamn. Mässan, som pågår
+                                    mellan 08.30 och 15.00, fokuserar på att visa på de möjligheter som framtiden
+                                    erbjuder i form av utbildning och arbete. Till Framtidsmässan 2014 kommer
+                                    såväl högskolor, universitet, yrkeshögskolor och andra utbildningsanordnare samt
+                                    arbetsgivare från Sverige och andra länder att bjudas in. Nytt för i år är vårt
+                                    samarbete med studenter från BTH som har gjort mässan mer modern och digital via
+                                    denna hemsida.">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <%= favicon_link_tag 'favicon-01.png' %>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "http://code.jquery.com/ui/1.10.3/jquery-ui.js" %>
+  <%= javascript_include_tag "require.js" %>
+  <%= javascript_include_tag "aloha.js" %>
+  <%= javascript_include_tag 'jquery.scrollTo-1.4.3.1-min.js' %>
+  <%= javascript_include_tag 'jquery.localscroll-1.2.7-min.js' %>
+  <%= javascript_include_tag "bootstrap.min.js" %>
+  <%= javascript_include_tag "bootstrap.js" %>
+  <%= javascript_include_tag 'main.js' %>
+
+
+
+  <%= csrf_meta_tags %>
+</head>
+<body id="body" class="<%= controller.controller_name %>">
+
+<div id="container-main" class="container">
+  <% if session[:user_id] %>
+    <div class="row hidden-xs">
+
+      <div class="col-xs-2">
+        <%= button_to 'Logout', logout_path, method: :delete    %>
+      </div>
+    </div>
+
+
+
+      <div class="row">
+
+
+        <nav class="col-xs-12 navbar navbar-default" id="klas" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+          </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="admin-menu-link"><b><%= link_to "För Besökare", admin_path %></b></li>
+          <li class="admin-menu-link"><b><%= link_to "För Utställare", admin_for_path %></b></li>
+          <li class="admin-menu-link"><b><%= link_to "Admins", users_path %></b></li>
+          <li class="admin-menu-link"><b><%= link_to "Statistik", statistics_path %></b></li>
+
+
+        </ul>
+
+
+
+      </div><!-- /.navbar-collapse -->
+
+
+      </nav>
+
+
+      </div>
+
+
+
+<% end %>
+  <div id="main">
+    <%= yield %>
+  </div>
+
+</div>
+</body>
+</html>
+

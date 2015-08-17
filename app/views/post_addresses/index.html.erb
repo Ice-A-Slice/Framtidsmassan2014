@@ -1,0 +1,30 @@
+<h1>Listing post_addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Municipality</th>
+      <th>Company</th>
+      <th>Address</th>
+      <th>Post number and city</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @post_addresses.each do |post_address| %>
+      <tr>
+        <td><%= post_address.municipality %></td>
+        <td><%= post_address.company %></td>
+        <td><%= post_address.address %></td>
+        <td><%= post_address.post_number_and_city %></td>
+        <td><%= link_to 'Show', post_address %></td>
+        <td><%= link_to 'Edit', edit_post_address_path(post_address) %></td>
+        <td><%= link_to 'Destroy', post_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

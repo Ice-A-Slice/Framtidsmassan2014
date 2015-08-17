@@ -1,0 +1,61 @@
+
+
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"><p class="Exhibitor_Header">Namn</p></div>
+  <div class="col-xs-offset-6 col-lg-2 col-md-2 col-sm-2 col-xs-2 "><p class="Exhibitor_Header">Plats</p></div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <br>
+      </div>
+      <div id="modal_body" class="modal-body schedule_show">
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <% @exhibitors.each do |ex| %>
+    <% if ex.category_id == category.id%>
+      <div id="catbox" class="col-xs-8 ">
+        <p id="ScheduleTextMargin" class="ExhibitorTitle"><%= ex.title %></p>
+        <div class="row">
+          <div class="col-sm-2 col-xs-2"><%= image_tag('besok_pil.png') %></div>
+          <div class="col-sm-10 col-xs-10">
+            <%= link_to ex.link do %>
+              <p class="visitText">Besök</p>
+            <% end %>
+          </div>
+        </div>
+        <% @schedules.each do |s| %>
+          <% if ex.id == s.exhibitors_id%>
+            <% @events.push(s.rooms_id) %>
+            <% @eventExhibitor.push(ex) %>
+          <% end %>
+        <% end %>
+        <% if @rooms.exists?(:id => @events.last ) and @schedules.exists?(:exhibitors_id => ex.id) %>
+          <div class="row kalle">
+            <div class="col-sm-2 col-xs-2 arrow-box"><%= image_tag('blapil.png', :class=>"pil" ) %></div>
+            <div class="col-sm-10 col-xs-10 seminarie-box">
+              <!-- Button trigger modal
+              Har inte lyckats med att skicka med ett rum id!!-->
+              <p><%= link_to 'Seminarietid', room_path(@events.last), remote: true, method: :get, :class => 'visitText2', :data=>{:toggle=>"modal", :target=>"#myModal"}%></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-xs-2">
+        <p class="ExhibitorPosition"><%= ex.position %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,53 @@
+<%= form_for(@entry_form) do |f| %>
+  <% if @entry_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entry_form.errors.count, "error") %> prohibited this entry_form from being saved:</h2>
+
+      <ul>
+      <% @entry_form.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :organization %><br>
+    <%= f.text_field :organization %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br>
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :food_amount %><br>
+    <%= f.text_field :food_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :food_other %><br>
+    <%= f.text_area :food_other %>
+  </div>
+  <div class="field">
+    <%= f.label :electricity %><br>
+    <%= f.text_field :electricity %>
+  </div>
+  <div class="field">
+    <%= f.label :internet %><br>
+    <%= f.text_field :internet %>
+  </div>
+  <div class="field">
+    <%= f.label :seminar %><br>
+    <%= f.text_field :seminar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

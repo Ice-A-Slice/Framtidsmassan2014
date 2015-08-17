@@ -1,0 +1,29 @@
+<h1>Information för utställarna</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rubrik</th>
+      <th>Text</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @exhibitor_informations.each do |exhibitor_information| %>
+      <tr>
+        <td><%= exhibitor_information.header %></td>
+        <td><%= exhibitor_information.content %></td>
+        <td><%= link_to 'Visa', exhibitor_information %></td>
+        <td><%= link_to 'Redigera', edit_exhibitor_information_path(exhibitor_information) %></td>
+        <td><%= link_to 'Ta bort', exhibitor_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

@@ -1,0 +1,24 @@
+<h1>Kontakter</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Namn</th>
+      <th>Telefon nummer</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.telephone_number %></td>
+        <td><%= contact.email %></td>
+        <td><%= link_to 'Redigera', edit_contact_path(contact) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

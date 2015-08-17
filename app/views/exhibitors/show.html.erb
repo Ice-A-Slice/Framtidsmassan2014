@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Namn:</strong>
+  <%= @exhibitor.title %>
+</p>
+
+<p>
+  <strong>Kategori:</strong>
+  <%= @exhibitor.category %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @exhibitor.position %>
+</p>
+
+<p>
+  <strong>Länk:</strong>
+  <%= @exhibitor.link %>
+</p>
+
+<%= link_to 'Redigare', edit_exhibitor_path(@exhibitor) %> |
+<%= link_to 'Tillbaka', admin_path %>

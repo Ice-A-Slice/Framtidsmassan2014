@@ -1,0 +1,224 @@
+<div class="row">
+  <div id="upphit" class="hidden-xs col-sm-3 col-sm-offset-9">
+    <%= link_to utstallare_path, :class=>'button' do %>
+        <%= image_tag('menu_forutstallare.png', :class=> "exhibitorButton") %>
+    <% end %>
+
+  </div>
+</div>
+<div class="hidden-xs row">
+  <div class="col-sm-6 col-sm-offset-3"  id="banner">
+    <%= link_to exhibition_path, :class=>'button' do %>
+        <%= image_tag('logo.png', :class=> 'logo')%>
+    <% end %>
+  </div>
+</div>
+
+<div class="hidden-sm hidden-md hidden-lg row navbar-fixed-top">
+  <%= link_to exhibition_path, :class=>'dropdown-toggle', :data => {:toggle=>"dropdown", :target=>"#admin_menu"} do %>
+      <div class="col-xs-2 dropdown" id="admin_menu">
+        <%= image_tag('meny_dropdown.png', :class=> 'dropdownmenu')%>
+        <ul class="dropdown-menu">
+          <div id="dropdownscroll" class="row">
+            <div class="col-xs-offset-2 col-xs-10">
+              <a href="#container-start"><p class="visitText">Start</p></a>
+              <a href="#container-exhibitors"><p class="visitText">Utställare</p></a>
+              <a href="#container-schedules"><p class="visitText">Schema</p></a>
+              <a href="#container-map"><p class="visitText">Karta</p></a>
+            </div>
+          </div>
+        </ul>
+  <% end %>
+  </div>
+
+  <div class="col-xs-10">
+    <%= link_to exhibition_path, :class=>'button' do %>
+        <%= image_tag('logga_framtidsmassan.png', :class=> 'logo')%>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="row" id="container-start">
+  <div class="hidden-xs col-sm-12" id="side">
+    <div class="row" id="menu_links">
+      <div class="col-xs-2 col-xs-offset-2"><a href="#container-start"><p class="menu_links">Start</p></a></div>
+      <div class="col-xs-2"><a href="#container-exhibitors"><p class="menu_links">Utställare</p></a></div>
+      <div class="col-xs-2"><a href="#container-schedules"><p class="menu_links">Schema</p></a></div>
+      <div class="col-xs-2"><a href="#container-map"><p class="menu_links">Karta</p></a></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 infoBox">
+    <p class="InfoHeader"><%= @info.title %></p>
+    <p class="InfoContentText"><%= sanitize(@info.content) %></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-4 col-sm-2 col-xs-offset-1 col-sm-offset-3"><p class="NewsHeader">Nyheter</p></div>
+
+
+
+</div>
+<% @newsfeed.each do |nf| %>
+<div class="row NewsBox">
+
+  <div class="col-xs-5 col-xs-offset-1 col-sm-3 col-sm-offset-3"><p class="NewsTitle"><%= nf.title %></p></div>
+  <div class="col-xs-5 col-sm-3 "><p class="NewsTimestamp"><%= nf.created_at.to_s.to(15) %></p></div>
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3"><p class="NewsContent"><%= nf.content %></p></div>
+
+</div>
+
+<% end %>
+<div class="row">
+
+</div>
+<div class="row" id="container-exhibitors">
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_utstallare.png', :class=>"delimiter") %>
+  </div>
+  <div id="mobilExhibitor" class="col-xs-4 hidden-sm hidden-md hidden-lg">
+    <!--<%= image_tag('avgransare_utstallare_mobil.png', :class=>"delimiter2") %>-->
+    <p class="delimiter_title">Utställare</p>
+  </div>
+  <% @categories.each do |cat| %>
+    <%= link_to category_path(cat.id), remote: true, method: :get, :class => 'button' do %>
+      <div class="hidden-xs col-sm-2 cat">
+        <p class="cat_title"><%= cat.title %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row catXs">
+<% @categories.each do |cat| %>
+    <%= link_to category_path(cat.id), remote: true, method: :get, :class => 'button' do %>
+        <div class="col-xs-4 hidden-sm hidden-md hidden-lg cat">
+          <p class="cat_title"><%= cat.title %></p>
+        </div>
+    <% end %>
+<% end %>
+</div>
+
+<div id="exhibitor-row" class="row">
+  <div class="col-sm-8 col-xs-11 col-xs-offset-1 col-sm-offset-3">
+    <div class="row">
+      <div id="exhibitor_show" class="col-xs-12"></div>
+    </div>
+  </div>
+</div>
+
+<div id="container-schedules" class="row">
+  <div id="mobilSchema" class="col-xs-4 hidden-sm hidden-md hidden-lg">
+   <!-- <%= image_tag('avgransare_schema_mobil.png', :class=>"delimiter2") %> -->
+    <p class="delimiter_title">Schema</p>
+  </div>
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_schema.png', :class=>"delimiter") %>
+  </div>
+
+  <% @rooms.each do |room| %>
+    <%= link_to room_path(room.id), remote: true, method: :get, :class => 'button' do %>
+      <div class="hidden-xs col-sm-2 room">
+        <p class="cat_title"><%= room.title %></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="row catXs">
+  <% @rooms.each do |room| %>
+      <%= link_to room_path(room.id), remote: true, method: :get, :class => 'button' do %>
+          <div class="col-xs-4 hidden-sm hidden-md hidden-lg col-sm-2 room">
+            <p class="cat_title"><%= room.title %></p>
+          </div>
+      <% end %>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="col-xs-11 col-xs-offset-1 col-sm-8 col-sm-offset-3">
+    <div class="row">
+      <div id="schedule_show" class="col-xs-12 schedule_show"></div>
+    </div>
+  </div>
+</div>
+
+<div id="container-map" class="row">
+  <div class="col-sm-3 hidden-xs">
+    <%= image_tag('avgransare_karta.png', :class=>"delimiter") %>
+  </div>
+  <div id="mobilMap" class="col-xs-4 hidden-sm hidden-md hidden-lg">
+    <p class="delimiter_title">Karta</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12col-sm-8 col-sm-offset-3">
+    <%= image_tag("Karta_1600px_52p_senaste.png", :class=>"map") %>
+  </div>
+
+</div>
+
+
+<div id="container-end" class="row hidden-xs">
+  <%= link_to login_path, method: :new do %>
+    <div class="col-xs-2  Login_text">
+      <p class="Login_text">Logga in</p>
+      </div>
+      <% end %>
+
+  <%= link_to  "https://twitter.com/Framtidsmassan" do %>
+      <div class="col-xs-1 col-xs-offset-7 social_button">
+        <%= image_tag('twitter_ikon.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+
+  <%= link_to "http://instagram.com/framtidsmassan" do %>
+      <div class="col-xs-1 social_button">
+        <%= image_tag('instagram_button.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+  <%= link_to  "https://www.facebook.com/pages/Framtidsm%C3%A4ssan-Karlshamn/611075925630143" do %>
+      <div class="col-xs-1 social_button">
+        <%= image_tag('facebook_button.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+</div>
+
+<div id="container-end-xs" class="row hidden-sm hidden-md hidden-lg">
+
+
+
+
+
+        <div id="upphit" class="col-xs-4">
+          <%= link_to utstallare_path, :class=>'button' do %>
+          <%= image_tag('forutstallare_knapp.png', :class=>'forutstallareKnappXs' ) %>
+          <% end %>
+        </div>
+  <%= link_to  "https://twitter.com/Framtidsmassan" do %>
+      <div id="twitter" class="col-xs-1 col-xs-offset-4 social_button">
+        <%= image_tag('twitter_ikon.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+  <%= link_to "http://instagram.com/framtidsmassan" do %>
+      <div id="instagram" class="col-xs-1 social_button">
+        <%= image_tag('instagram_button.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+  <%= link_to  "https://www.facebook.com/pages/Framtidsm%C3%A4ssan-Karlshamn/611075925630143" do %>
+      <div id="facebook" class="col-xs-1  social_button">
+        <%= image_tag('facebook_button.png', :class=> 'socialButtonImage') %>
+      </div>
+  <% end %>
+</div>
+
+<div class="row UpAgain">
+  <%= link_to  "#container-start", :class=> 'social_button' do %>
+      <div href="#upphit" id="UpAgainDiv" class="col-sm-1 col-sm-offset-10 hidden-xs UpAgain navbar-fixed-bottom">
+      </div>
+  <% end %>
+</div>

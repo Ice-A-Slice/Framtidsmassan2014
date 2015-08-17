@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Karta</strong>
+  <%= image_tag(@map.image) %>
+</p>
+
+<%= link_to 'Redigera', edit_map_path(@map) %> |
+<%= link_to 'Tillbaka', admin_path %>

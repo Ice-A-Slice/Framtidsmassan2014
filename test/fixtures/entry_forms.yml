@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  contact: MyString
+  organization: MyString
+  telephone: MyString
+  email: MyString
+  food_amount: MyString
+  food_other: MyText
+  electricity: MyString
+  internet: MyString
+  seminar: MyString
+
+two:
+  contact: MyString
+  organization: MyString
+  telephone: MyString
+  email: MyString
+  food_amount: MyString
+  food_other: MyText
+  electricity: MyString
+  internet: MyString
+  seminar: MyString

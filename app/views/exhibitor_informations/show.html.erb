@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Header:</strong>
+  <%= @exhibitor_information.header %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @exhibitor_information.content %>
+</p>
+
+<%= link_to 'Redigera', edit_exhibitor_information_path(@exhibitor_information) %> |
+<%= link_to 'Tillbaka', exhibitor_informations_path %>

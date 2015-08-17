@@ -1,0 +1,29 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> Färhindrade det här Eventet från att bli sparat</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" id="timepicker">
+    <%= f.label :time %><br>
+    <%= f.text_field  :time %>
+  </div>
+  <div class="field">
+    <%= f.label :rooms, t('.room_type') %><br>
+    <%= f.collection_select(:rooms_id, Room.all, :id, :title) %>
+  </div>
+  <div class="field">
+    <%= f.label :exhibitors_id, t('.room_type') %><br>
+    <%= f.collection_select(:exhibitors_id, Exhibitor.all, :id, :title) %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Spara' %>
+  </div>
+<% end %>

@@ -1,0 +1,84 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<div class="hidden-xs row">
+  <div class="col-sm-6 col-sm-offset-3"  id="banner">
+    <%= link_to exhibition_path, :class=>'button' do %>
+        <%= image_tag('logo.png', :class=> 'logo')%>
+    <% end %>
+  </div>
+</div>
+
+
+
+<div class="row exhibitor-info">
+  <div class="col-xs-offset-1 col-sm-offset-3 col-xs-10 col-sm-6"><p class="exhibitor-info-header"><%= @info.header %></p></div>
+  <div class="col-xs-offset-1 col-sm-offset-3 col-xs-10 col-sm-6"><p class="exhibitor-info-content"><%= sanitize(@info.content) %></p></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-3">
+    <%= link_to edit_exhibitor_information_path(@info.id) do %>
+        <button>Hantera Text</button>
+    <% end %>
+  </div>
+</div>
+<div class="row contacts hidden-xs hidden-sm">
+  <div class="col-md-4 col-md-offset-3"><p class="contact-header"><%= @contact1.name %></p></div>
+  <div class="col-md-4"><p class="contact-header"><%= @contact2.name %></p></div>
+
+  <div class="col-md-offset-3 col-md-4"><p class="contact-telephone"><%= @contact1.telephone_number %></p></div>
+  <div class="col-md-3"><p class="contact-telephone"><%= @contact2.telephone_number %></p></div>
+
+
+  <div class="col-md-offset-3 col-md-4"><p class="contact-mail"><%= @contact1.email %></p></div>
+  <div class="col-md-4"><p class="contact-mail"><%= @contact2.email %></p></div>
+</div>
+<div class="row contacts-sm hidden-md hidden-lg">
+
+  <div class="col-xs-offset-1 col-xs-11 col-sm-9 col-sm-offset-3"><p class="contact-header"><%= @contact1.name %></p></div>
+  <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9"><p class="contact-telephone"><%= @contact1.telephone_number %></p></div>
+  <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9"><p class="contact-mail"><%= @contact1.email %></p></div>
+
+
+  <div class="col-xs-offset-1 col-xs-11 col-sm-9 col-sm-offset-3"><p class="contact-header"><%= @contact2.name %></p></div>
+  <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9"><p class="contact-telephone"><%= @contact2.telephone_number %></p></div>
+  <div class="col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-9"><p class="contact-mail"><%= @contact2.email %></p></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-3">
+    <%= link_to contacts_path do %>
+        <button>Hantera Kontakter</button>
+    <% end %>
+  </div>
+</div>
+
+<div class="row contact-address-row">
+  <div class="col-md-4 col-sm-offset-3 col-xs-offset-1"><p class="contact-header">Postadress</p></div>
+  <div class="col-md-4 col-sm-offset-3 col-xs-offset-1"><p id="text-address"><%= @address.municipality %></p></div>
+  <div class="col-md-4 col-sm-offset-3 col-xs-offset-1"><p class="text-address"><%= @address.company %></p></div>
+  <div class="col-md-4 col-sm-offset-3 col-xs-offset-1"><p class="text-address"><%= @address.address %></p></div>
+  <div class="col-md-4 col-sm-offset-3 col-xs-offset-1"><p class="text-address"><%= @address.post_number_and_city %></p></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-offset-3 col-xs-3">
+    <%= link_to edit_post_address_path(@address) do %>
+        <button>Hantera Adress</button>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<div id="container-end-for-exhibitors" class="row hidden-xs">
+</div>
+
+
+
+

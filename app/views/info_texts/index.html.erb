@@ -1,0 +1,26 @@
+<h1>Information för besökarna</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rubrik</th>
+      <th>Text</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @info_texts.each do |info_text| %>
+      <tr>
+        <td><%= info_text.title %></td>
+        <td><%= info_text.content %></td>
+        <td><%= link_to 'Visa', info_text %></td>
+        <td><%= link_to 'Redigera', edit_info_text_path(info_text) %></td>
+        <td><%= link_to 'Ta bort', info_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+
+    <div class="row exhibitorRow">
+
+      <div class="col-xs-1"></div>
+
+      <div id=""class="col-xs-10">
+        <div class=" row entry">
+
+          <div class="col-xs-12 entry cat">
+
+            <h3 class="cat_title"><%= @categories.title %></h3>
+
+            <% @exhibitors.each do |ex| %>
+                <% if ex.category_id == @categories.id%>
+                    <div class=" row">
+
+
+                      <div class="col-xs-9"><h1><%= ex.title %></h1>
+                        </div>
+
+                    </div>
+                <% end %>
+            <% end %>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <div class="col-xs-1"></div>
+    </div>
+
+
+<%= link_to 'Redigera', edit_category_path(@category) %> |
+<%= link_to 'Tillbaka', admin_path %>
