@@ -1,6 +1,6 @@
 Built with Ruby on Rails 4
 
-A webpage with cms that I made as my first Ruby on Rails project. It was used by Karlshamn's comunity as application for a post-school fair 2014.
+A webpage with cms that I made as my first Ruby on Rails project while learning the framework. It was a ordered job which i got after a school pitch and was used by Karlshamn's comunity as application for a post-school fair 2014.
 
 Get the git repo
 
